@@ -42,7 +42,7 @@ W pliku .csproj możesz zobaczyć zainstalowane paczki:
 
 ![mainClass](/Attachments/Screenshot_9.jpg)
 
-Connection String powinien być trzymany w zewnętrznym pliku konfiguracyjnym:
+Connection String powinien być trzymany w zewnętrznym pliku konfiguracyjnym: appsettings.Development.json
 
 ![config](/Attachments/Screenshot_10.jpg)
 
@@ -55,3 +55,7 @@ Definicja rejestracji naszego kontekstu baz danych w kontenerze depency injectio
 Konfigurowanie połączenia z bazą danych:
 
 ![config](/Attachments/Screenshot_13.jpg)
+
+Ostatni krok to dodanie publicznego konstruktora do którego przekarzemy zmienna DbContextOptions dla klasy DbContext
+
+![]()
