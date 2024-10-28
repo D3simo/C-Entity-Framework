@@ -56,6 +56,16 @@ Konfigurowanie połączenia z bazą danych:
 
 ![config](/Attachments/Screenshot_13.jpg)
 
-Ostatni krok to dodanie publicznego konstruktora do którego przekarzemy zmienna DbContextOptions dla klasy DbContext
+Ostatni krok to dodanie publicznego konstruktora do którego przekarzemy zmienna DbContextOptions dla klasy DbContext. Dzięki konstruktorowi kontener depency injection będzie w stanie skonfigurować klase MyBoardsContext. Połączenie z bazą danych jest konfigurowane w zależności od środowiska: patrz appsettings.Development.json
 
-![]()
+![construct](/Attachments//Screenshot_14.jpg)
+
+## Klucze
+
+Jedna z konwencji aby utworzyć klucz główny to encja z nazwą **ID**:
+
+![mainkey](/Attachments/Screenshot_15.jpg)
+
+lub przy użyciu atrybutu **[Key]**:
+
+![keyattr](/Attachments/Screenshot_16.jpg)
