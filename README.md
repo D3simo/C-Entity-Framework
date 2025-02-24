@@ -64,8 +64,12 @@ Ostatni krok to dodanie publicznego konstruktora do którego przekarzemy zmienna
 
 Jedna z konwencji aby utworzyć klucz główny to encja z nazwą **ID**:
 
-![mainkey](/Attachments/Screenshot_15.jpg)
+![mainkey](/Attachments/Screenshot_17.jpg)
 
 lub przy użyciu atrybutu **[Key]**:
 
 ![keyattr](/Attachments/Screenshot_16.jpg)
+
+Dodajemy klucze główne do encji Adress, Comment, Tag, User, WorkItem.
+
+Dodawanie złożonego klucza głównego do encji User.
