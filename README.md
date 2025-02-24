@@ -73,3 +73,44 @@ lub przy użyciu atrybutu **[Key]**:
 Dodajemy klucze główne do encji Adress, Comment, Tag, User, WorkItem.
 
 Dodawanie złożonego klucza głównego do encji User.
+W klasie DbContextu MyBoardsContext należy dodać metodę, do której należy konfiguracja modelu bazy danych. Tak wyglądałaby metoda. aby skonfigurować wzłożony klucz dla encji User:
+
+![userkey](/Attachments/Screenshot_23.jpg)
+
+W takim przypadku możnaby się pozbyc klucza głównego typu Guid dla encji User, i entity framework stworzyłby klucz główny złożony bazując na metodzie, którą stworzyliśmy.
+
+### Nazwa kolumny
+
+Jeżeli chcemy zachować nazwę właściwości i chcemy zmienić nazwę kolumny należy użyć atrybutu [Column] z namespace'u System.ComponentsModel.DataAnnotations.Schema:
+
+![columnname](/Attachments/Screenshot_24.jpg)
+
+### Typy właściwości
+
+Natomiast jeżeli chcemy zmienić domyślny typ generowany przez Entity Framework:
+
+![columntype](/Attachments/Screenshot_25.jpg)
+
+### Dokladność wartości właściwości
+
+Jeżeli chcesz zmienić dokładność wartości zmiennoprzecinkowej:
+
+![precision](/Attachments/Screenshot_26.jpg)
+
+### Maksymalna długość właściwości
+
+Jeżeli chcesz zmienić maksymalną długość string:
+
+![maxlength](/Attachments/Screenshot_27.jpg)
+
+### Nullable
+
+Aby kolumna nie przyjmowała wartości typu NULL, przejdź do pliku .csproj głównego projektu: (globalne rozwiązanie lub dodanie "?" do typu właściwości lub skorzystanie z atrybuty **[Required]**)
+
+![nullable](/Attachments/Screenshot_28.jpg)
+
+## Atrybuty wlaściwości
+
+Zamiast konfigurować właściwości w sposób jak wyżej, lepszym podejściem jest konfiguracja w OnModelCreating czyli konfiguracji modelu bazy danych.
+
+![config](/Attachments/Screenshot_29.jpg)
