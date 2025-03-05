@@ -15,6 +15,10 @@
     - [Nullable](#nullable)
   - [Atrybuty wlaściwości](#atrybuty-wlaściwości)
   - [Wartości generyczne domyślne](#wartości-generyczne-domyślne)
+  - [Konfiguracja relacji](#konfiguracja-relacji)
+    - [Relacja 1 do 1](#relacja-1-do-1)
+    - [Relacja 1 : n](#relacja-1--n)
+    - [Relacja n : n](#relacja-n--n)
 
 <!-- TOC --><a name="project-quick-info"></a>
 
@@ -182,5 +186,67 @@ z konfiguracji danej encjii (OnModelCreating).
 Dodajmy funckjonalność, aby właściwość UpdatedDate z encji Comment była
 automatycznie przypisywana wtedy kiedy nastąpi zmiana w danej encji.
 
-![defaultvalue](/Attachments/Screenshot_31.jpg)
+![update](/Attachments/Screenshot_31.jpg)
+
+## Konfiguracja relacji
+
+### Relacja 1 do 1
+
+Dodanie referencji Usera do Adresu i z Adresu do Usera:
+
+![addressreference](/Attachments/Screenshot_32.jpg)
+
+![userreference](/Attachments/Screenshot_33.jpg)
+
+Po stronie kodu mamy utworzoną relacje 1 do 1 między User a Adress.
+Aby odpowiednio odwozorwać relacje po stronie bazy danych w 1 z tych tabel
+należy przechować kolumnę z kluczem obcym do drugiej z tabel.
+
+![user](/Attachments/Screenshot_34.jpg)
+
+![guid2](/Attachments/Screenshot_38.jpg)
+
+Nazwa wlaściwości z kluczem obcym powinna pasować do nazwy Referencj: User -> UserId,
+Person -> PersonId oraz żeby typ właściwości pasował do klucza głownego drugiej tabeli.
+
+Taka struktura może być niewystarczająca, dlatego nalezy do konfiguracji
+modelu bazy danych skonfigurować relację pomiędzy tabelami.
+
+![configurerelations](/Attachments/Screenshot_35.jpg)
+
+### Relacja 1 : n
+
+W naszym przypadku skonfigurujemy 2 pary tabel z relacjami 1 do wielu.
+1wsza para to będą tabele WorkItem i Comment. Każdy WorkItem może mieć wiele Komentarzy.
+Skonfigurujmy tabelę WorkItem, aby mógł mieć relację do wielu Komentarzy.
+
+Dodajmy właściwość do WorkItemu:
+
+![workitemcomments](/Attachments/Screenshot_36.jpg)
+
+Dodajmy właściwość do Comment:
+
+![workitemcomments2](/Attachments/Screenshot_37.jpg)
+
+Entity Framework automatycznie utworzy taką kolumnę co zwane
+jest ShadowForeignKeyProperty, ale dobrą praktyką jest dodawanie
+takich włąsciwości / relacji.
+
+![workitemmainkey](/Attachments/Screenshot_39.jpg)
+
+Przejdźmy do konfiguracji modelu bazy danych. Relacje można skonfigurować na
+2 sposoby, z poziomu tabeli WorkItem lub z poziomu tabeli Comment:
+
+![workitemmworkitemrelation2](/Attachments/Screenshot_40.jpg)
+
+Teraz utwórzmy takie same relacje między tabelami WorkItem i User.
+Oraz skonfigurujmy te relacje w konfiguracji modelu bazy danych.
+
+![workitemkey](/Attachments/Screenshot_43.jpg)
+
+![workitemuserrelation](/Attachments/Screenshot_44.jpg)
+
+![workitemmworkitemrelation3](/Attachments/Screenshot_40.jpg)
+
+### Relacja n : n
 <!-- TOC end -->
