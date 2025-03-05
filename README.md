@@ -179,4 +179,8 @@ z konfiguracji danej encjii (OnModelCreating).
 
 ![defaultvalue](/Attachments/Screenshot_30.jpg)
 
+Dodajmy funckjonalność, aby właściwość UpdatedDate z encji Comment była
+automatycznie przypisywana wtedy kiedy nastąpi zmiana w danej encji.
+
+![defaultvalue](/Attachments/Screenshot_31.jpg)
 <!-- TOC end -->
