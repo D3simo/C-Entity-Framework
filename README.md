@@ -228,7 +228,25 @@ Dodajmy właściwość do Comment:
 
 ![workitemcomments2](/Attachments/Screenshot_37.jpg)
 
+Entity Framework automatycznie utworzy taką kolumnę co zwane
+jest ShadowForeignKeyProperty, ale dobrą praktyką jest dodawanie
+takich włąsciwości / relacji.
+
 ![workitemmainkey](/Attachments/Screenshot_39.jpg)
+
+Przejdźmy do konfiguracji modelu bazy danych. Relacje można skonfigurować na
+2 sposoby, z poziomu tabeli WorkItem lub z poziomu tabeli Comment:
+
+![workitemmworkitemrelation2](/Attachments/Screenshot_40.jpg)
+
+Teraz utwórzmy takie same relacje między tabelami WorkItem i User.
+Oraz skonfigurujmy te relacje w konfiguracji modelu bazy danych.
+
+![workitemkey](/Attachments/Screenshot_43.jpg)
+
+![workitemuserrelation](/Attachments/Screenshot_44.jpg)
+
+![workitemmworkitemrelation3](/Attachments/Screenshot_40.jpg)
 
 ### Relacja n : n
 <!-- TOC end -->
