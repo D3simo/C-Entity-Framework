@@ -249,4 +249,18 @@ Oraz skonfigurujmy te relacje w konfiguracji modelu bazy danych.
 ![workitemmworkitemrelation3](/Attachments/Screenshot_40.jpg)
 
 ### Relacja n : n
+
+Dla starszych wersji frameworka:
+Potrzebna jest osobna tabela łącząca Tagi i WorkItemy.
+Tworzymy WorkItemTags:
+
+![workitemtags](/Attachments/Screenshot_45.jpg)
+
+Skonfiguruj encję w MyBoardContext:
+
+![workitemtagsconfiguration](/Attachments/Screenshot_46.jpg)
+
+Dla nowszych frameworków:
+Lub w uproszczony sposób:
+Dodajemy listę do encji Tag i WorkItem typu Tag i WorkItem oraz nalezy je właściwie skonfigurować w MyBoardContext
 <!-- TOC end -->
