@@ -19,6 +19,7 @@
     - [Relacja 1 do 1](#relacja-1-do-1)
     - [Relacja 1 : n](#relacja-1--n)
     - [Relacja n : n](#relacja-n--n)
+    - [Zadanie praktyczne](#zadanie-praktyczne)
 
 <!-- TOC --><a name="project-quick-info"></a>
 
@@ -263,4 +264,27 @@ Skonfiguruj encję w MyBoardContext:
 Dla nowszych frameworków:
 Lub w uproszczony sposób:
 Dodajemy listę do encji Tag i WorkItem typu Tag i WorkItem oraz nalezy je właściwie skonfigurować w MyBoardContext
+
+### Zadanie praktyczne
+
+Pole State z encji WorkItem przenieś do oddzielnej encji. Ustaw prawidłowe relacje oraz skonfiguruj w MyBoardContext
+
+![workitemstate](/Attachments/Screenshot_47.jpg)
+
+Usuń pole State z encji WorkItem.
+Dodaj relacje do encji WorkItem:
+
+![workitemstaterelationhip](/Attachments/Screenshot_48.jpg)
+
+W MyBoardsContext dodaj encję do konstruktora:
+
+![workitemstateconstruct](/Attachments/Screenshot_49.jpg)
+
+Do modelBuilder klasy WorkItem dodaj:
+
+![workitemstatebuilder](/Attachments/Screenshot_50.jpg)
+
+Oraz utwórz modelBuilder dla klasy WorkItemState:
+
+![workitemstatemodelbuilder](/Attachments/Screenshot_51.jpg)
 <!-- TOC end -->
